@@ -1,0 +1,5 @@
+# Ignore specific Blender AI Agent logs and status files
+blender_log.txt
+blender_status.json
+__pycache__/
+*.pyc
