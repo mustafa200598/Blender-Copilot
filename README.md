@@ -1,53 +1,67 @@
-# Blender AI Agent Bridge 🚀
+<div align="center"><h1>Blender-Copilot</h1><p><strong>AI Agent Integration for Blender Automation</strong> | <strong>دمج وكلاء الذكاء الاصطناعي لأتمتة Blender</strong></p><p><code>License: MIT</code> <code>Platform: Cross-Platform (Blender)</code> <code>Developed by: Bob</code></p></div>
 
-أداة بسيطة وقوية لربط وكيل الذكاء الاصطناعي (AI Agent) ببرنامج Blender للتحكم به عن بعد وتنفيذ أوامر البايثون (Python) برمجياً وبشكل تلقائي.
+* * *
 
-## 📌 الفكرة والمشكلة التي يحلها
-عندما تتحدث مع وكيل ذكاء اصطناعي (مثل مساعد برمجي أو Agent) وتطلب منه تعديل أو بناء مشهد في بلندر، لا يستطيع الوكيل التفاعل مع البرنامج مباشرة.
-هذا السكربت يحل المشكلة من خلال إنشاء "جسر تواصل" (Bridge). يقوم الوكيل بكتابة أكواد بايثون في ملف خارجي، ويقوم بلندر بمراقبة هذا الملف في الخلفية وقراءة الأكواد وتنفيذها لحظياً (Real-time).
+Blender-Copilot is a powerful bridge designed to integrate AI agents directly with Blender. It enables remote control and automated execution of Python commands, streamlining workflows for 3D modeling, animation, and various Blender operations.
 
-## 📂 محتويات المشروع
-1. `blender_bridge.py`: السكربت الأساسي الذي يعمل داخل بلندر كخلفية (Background Timer) ويراقب الأوامر.
-2. `blender_cmd.py`: الملف الوسيط (الفارغ مبدئياً) الذي سيقوم الذكاء الاصطناعي بكتابة الأكواد داخله.
+Blender-Copilot هو جسر قوي مصمم لدمج وكلاء الذكاء الاصطناعي مباشرة مع Blender. يتيح التحكم عن بعد والتنفيذ التلقائي لأوامر بايثون، مما يبسط سير العمل في النمذجة ثلاثية الأبعاد، والتحريك، ومختلف عمليات Blender.
 
-## 🛠️ كيفية الإعداد والاستخدام
+* * *
 
-### الخطوة الأولى: إعداد مسار الملفات
-1. قم بتحميل المشروع أو استنساخه (Clone).
-2. افتح ملف `blender_bridge.py` باستخدام أي محرر نصوص.
-3. ابحث عن السطر التالي:
-   ```python
-   COMMAND_FILE = r"C:\path\to\your\project\blender_cmd.py"
-   ```
-4. قم بتغيير المسار ليطابق المسار الفعلي لملف `blender_cmd.py` على جهازك. (احرص على إبقاء حرف `r` قبل المسار لتجنب مشاكل رموز السلاش `\`).
+## Features | المميزات
 
-### الخطوة الثانية: تشغيل الجسر داخل Blender
-1. افتح برنامج Blender.
-2. انتقل إلى واجهة **Scripting** (من التبويبات العلوية).
-3. اضغط على زر **New** لإنشاء سكربت جديد.
-4. انسخ محتوى ملف `blender_bridge.py` بالكامل والصقه هناك.
-5. اضغط على زر التفعيل (Play) ⏯️ أو اختصار `Alt + P` لتشغيل السكربت.
-6. إذا قمت بفتح نافذة الـ System Console في بلندر (من `Window > Toggle System Console`)، سترى الرسالة: `Blender AI Bridge Started! Waiting for commands...`.
+### 1\. AI Agent Integration | دمج وكلاء الذكاء الاصطناعي
 
-### الخطوة الثالثة: توجيه الذكاء الاصطناعي (AI Agent)
-الآن أصبح الجسر جاهزاً! كل ما عليك فعله هو إعطاء الوكيل (مثل Gemini أو غيره من المساعدات التي تدعم تعديل الملفات) التعليمات التالية ضمن البرومبت (Prompt):
-> "أريدك أن تكتب أي كود بايثون مخصص لـ Blender داخل ملف `blender_cmd.py`. لا تقم بتشغيله من عندك، فقط قم بكتابة الكود داخل ذلك الملف وسيقوم بلندر بالتقاطه وتنفيذه تلقائياً."
+*   Seamlessly connect various AI agents with Blender. | ربط سلس بين وكلاء الذكاء الاصطناعي المتنوعين و Blender.
+*   Enable intelligent, context-aware control over Blender functionalities. | تمكين التحكم الذكي والمدرك للسياق في وظائف Blender.
 
-💡 **أمثلة لما يمكن للوكيل أن يفعله تلقائياً:**
-- استيراد مجسمات وشخصيات 3D.
-- إعداد الإضاءة السينمائية وإضافة الكاميرات.
-- تطبيق أنظمة الجزيئات (Particle Systems) كالمطر أو الدخان.
-- تحريك الهياكل العظمية (Rigging/Bones) وتوليد حركات سير (Walk Cycle).
+### 2\. Automated Python Scripting | أتمتة نصوص بايثون
 
-## ⚠️ ملاحظات هامة حول الأمان والأداء
-* تم تجهيز وتنظيف الأكواد بالكامل ولا تحتوي على أي مسارات محلية خاصة.
-* يعمل هذا الجسر من خلال وظيفة `exec()`، لذا **لا تستخدمه لتشغيل نصوص برمجية من مصادر مجهولة**، بل استخدمه حصرياً كوسيط بينك وبين وكيل الذكاء الاصطناعي الخاص بك.
-* يتم مسح محتوى `blender_cmd.py` تلقائيًا وبسرعة فائقة (في غضون ثانية) بعد تنفيذ الكود داخله، وذلك لتجنب التكرار العشوائي للعمليات.
+*   Execute Python commands and scripts within Blender programmatically. | تنفيذ أوامر ونصوص بايثون داخل Blender برمجياً.
+*   Automate repetitive tasks and complex operations efficiently. | أتمتة المهام المتكررة والعمليات المعقدة بكفاءة.
 
-## 🤝 المساهمة
-المشروع مفتوح المصدر (Open Source). لا تتردد في عمل Fork للمشروع وتطويره! يمكنك إضافة مميزات جديدة مثل:
-- نظام تصدير الأخطاء من بلندر إلى الوكيل (Error Logging System).
-- دعم الأوامر المتزامنة والمجدولة.
+### 3\. Remote Control Capabilities | قدرات التحكم عن بعد
 
----
-**ودمتم سالمين شوباب وشوبايب**
+*   Control Blender instances from external applications or AI agents. | التحكم في نسخ Blender من تطبيقات خارجية أو وكلاء ذكاء اصطناعي.
+*   Facilitate advanced interaction and dynamic content generation. | تسهيل التفاعل المتقدم وتوليد المحتوى الديناميكي.
+
+* * *
+
+## Tech Stack | التقنيات
+
+| Component | Technology |
+| :-- | :-- |
+| **Frontend** | N/A (Blender Scripting) |
+| **Backend/Core** | Python |
+| **Database/Storage** | N/A |
+
+* * *
+
+## Project Structure | هيكل المشروع
+
+```plaintext
+Blender-Copilot/
+├── .gitattributes
+├── .gitignore
+├── README.md
+├── blender_bridge.py       # AI Agent bridge logic for Blender
+└── blender_cmd.py          # Utilities for executing Blender commands
+```
+
+* * *
+
+## Terms of Use | شروط الاستخدام
+
+1.  **Personal Use:** Free for personal, non-commercial use. (الاستخدام الشخصي مجاني وغير تجاري)
+2.  **Modification:** You may modify this software for personal use. (يمكنك تعديل البرنامج للاستخدام الشخصي)
+
+* * *
+
+## Disclaimer | إخلاء المسؤولية
+
+This software is provided as is. The developer assumes no liability for any system instability or data loss.  
+البرنامج مقدم كما هو. المطور غير مسؤول عن أي عدم استقرار للنظام أو فقدان للبيانات.
+
+* * *
+
+<div align="center"><strong>Developed with passion by Bob</strong><br>All rights reserved © 2026</div>
